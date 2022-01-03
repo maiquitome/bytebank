@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './features/dashboard/pages/dashboard_page.dart';
+
 void main() {
   runApp(Bytebank());
 }
@@ -14,6 +16,7 @@ class Bytebank extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      home: DashboardPage(),
     );
   }
 }
