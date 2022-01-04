@@ -10,7 +10,10 @@ class DashboardPage extends StatelessWidget {
         title: Text('Dashboard'),
       ),
         children: <Widget>[
-          Image.asset('assets/images/bytebank_logo.png'),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset('assets/images/bytebank_logo.png'),
+            ),
         ],
       ),
     );
