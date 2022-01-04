@@ -7,26 +7,28 @@ class CustomButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(16.0),
-        height: 100,
-        width: 150,
-        color: Theme.of(context).primaryColor,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Icon(
-              Icons.people,
-              color: Colors.white,
-            ),
-            Text(
-              'Contacts',
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+    return Material(
+      color: Theme.of(context).primaryColor,
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          height: 100,
+          width: 150,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Icon(
+                Icons.people,
+                color: Colors.white,
+              ),
+              Text(
+                'Contacts',
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );
