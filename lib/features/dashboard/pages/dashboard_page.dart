@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/widgets/custom_buttom.dart';
+import '../../contacts/contacts/pages/contacts_page.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key key}) : super(key: key);
@@ -22,7 +23,14 @@ class DashboardPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: CustomButtom(),
+              child: CustomButtom(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => ContactsPage()),
+                  );
+                },
+              ),
             ),
           ],
         ),
