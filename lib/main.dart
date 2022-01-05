@@ -21,6 +21,26 @@ class Bytebank extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
         appBarTheme: AppBarTheme(centerTitle: true),
+        inputDecorationTheme: InputDecorationTheme(
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.all<Color>(Colors.green[900]),
+            padding: MaterialStateProperty.all<EdgeInsets>(
+              EdgeInsets.all(16.0),
+            ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+            ),
+          ),
+        ),
       ),
       home: DashboardPage(),
     );
