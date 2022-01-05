@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/widgets/custom_buttom.dart';
-import '../../contacts/contacts/pages/contacts_page.dart';
+import '../../contacts/contacts/view/pages/contacts_page.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key key}) : super(key: key);
