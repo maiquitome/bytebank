@@ -27,3 +27,25 @@ Future<int> save(ContactModel contact) {
     return db.insert('contacts', contactMap);
   });
 }
+
+Future<List<ContactModel>> findAll() {
+  return createDatabase().then(
+    (Database db) {
+      return db.query('contacts').then(
+        (List<Map<String, dynamic>> maps) {
+          final List<ContactModel> contacts = List();
+
+          for (Map<String, dynamic> map in maps) {
+            final ContactModel contactModel = ContactModel(
+              accountNumber: map['accountNumber'],
+              id: map['id'],
+              name: map['name'],
+            );
+            contacts.add(contactModel);
+          }
+          return contacts;
+        },
+      );
+    },
+  );
+}
