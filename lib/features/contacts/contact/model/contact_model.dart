@@ -1,16 +1,16 @@
 class ContactModel {
   ContactModel({
     this.id,
-    this.accountName,
+    this.name,
     this.accountNumber,
   });
 
   int id;
-  String accountName;
+  String name;
   int accountNumber;
 
   void setAccountName(String value) {
-    accountName = value;
+    name = value;
   }
 
   void setAccountNumber(int value) {

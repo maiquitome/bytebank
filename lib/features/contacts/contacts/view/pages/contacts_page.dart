@@ -9,7 +9,7 @@ class ContactsPage extends StatefulWidget {
 
   final ContactsModel contactsModel = ContactsModel(
     contacts: <ContactModel>[
-      ContactModel(accountName: 'Maiqui Tomé', accountNumber: 74563921)
+      ContactModel(name: 'Maiqui Tomé', accountNumber: 74563921)
     ],
   );
 
@@ -32,7 +32,7 @@ class _ContactsPageState extends State<ContactsPage> {
           return Card(
             child: ListTile(
               title: Text(
-                _contactModel.accountName,
+                _contactModel.name,
                 style: TextStyle(fontSize: 20.0),
               ),
               subtitle: Text(
