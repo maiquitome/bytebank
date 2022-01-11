@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../view/widgets/contact.dart';
 import '../../../contact/model/contact_model.dart';
 import '../../model/contacts_model.dart';
 import '../../../contact/view/pages/contact_page.dart';
@@ -29,18 +30,7 @@ class _ContactsPageState extends State<ContactsPage> {
         itemBuilder: (BuildContext context, int index) {
           ContactModel _contactModel = widget.contactsModel.contacts[index];
 
-          return Card(
-            child: ListTile(
-              title: Text(
-                _contactModel.name,
-                style: TextStyle(fontSize: 20.0),
-              ),
-              subtitle: Text(
-                _contactModel.accountNumber.toString(),
-                style: TextStyle(fontSize: 16.0),
-              ),
-            ),
-          );
+          return Contact(_contactModel);
         },
       ),
       floatingActionButton: FloatingActionButton(
