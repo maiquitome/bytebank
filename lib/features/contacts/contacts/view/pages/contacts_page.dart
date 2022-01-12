@@ -22,18 +22,32 @@ class _ContactsPageState extends State<ContactsPage> {
       ),
       body: FutureBuilder<List<ContactModel>>(
         initialData: [],
-        future: Future.delayed(Duration(seconds: 1)).then((value) => findAll()),
+        // future: Future.delayed(Duration(seconds: 1)).then((value) => findAll()),
+        future: findAll(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          final List<ContactModel> contacts = snapshot.data;
+          switch (snapshot.connectionState) {
+            case ConnectionState.none:
+              break;
+            case ConnectionState.waiting:
+              return CircularProgressIndicator();
+              break;
+            case ConnectionState.active:
+              break;
+            case ConnectionState.done:
+              final List<ContactModel> contacts = snapshot.data;
 
-          return ListView.builder(
-            itemCount: contacts.length,
-            itemBuilder: (BuildContext context, int index) {
-              ContactModel _contactModel = contacts[index];
+              return ListView.builder(
+                itemCount: contacts.length,
+                itemBuilder: (BuildContext context, int index) {
+                  ContactModel _contactModel = contacts[index];
 
-              return Contact(_contactModel);
-            },
-          );
+                  return Contact(_contactModel);
+                },
+              );
+              break;
+          }
+
+          return Text('unknown error');
         },
       ),
       floatingActionButton: FloatingActionButton(
