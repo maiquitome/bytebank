@@ -52,11 +52,13 @@ class _ContactsPageState extends State<ContactsPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (BuildContext context) => ContactPage(),
-            ),
-          );
+          Navigator.of(context)
+              .push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => ContactPage(),
+                ),
+              )
+              .then((value) => setState(() {}));
         },
         child: Icon(Icons.add),
       ),
