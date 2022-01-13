@@ -1,12 +1,14 @@
-import 'package:bytebank/core/database/app_database.dart';
 import 'package:flutter/material.dart';
 
 import '../../model/contact_model.dart';
 import '../../view/widgets/contact_form.dart';
+import '../../repository/contact_repository.dart';
 
 class ContactPage extends StatelessWidget {
-  const ContactPage({Key key}) : super(key: key);
+  ContactPage({Key key}) : super(key: key);
 
+  final ContactRepository repository = ContactRepository();
+  
   @override
   Widget build(BuildContext context) {
     GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -25,7 +27,7 @@ class ContactPage extends StatelessWidget {
   }
 
   void saveContact(BuildContext context, ContactModel contactModel) {
-    save(contactModel).then(
+    repository.save(contactModel).then(
       (int id) => Navigator.pop(context),
     );
   }

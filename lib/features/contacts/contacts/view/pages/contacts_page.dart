@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:bytebank/core/database/app_database.dart';
-
 import '../../view/widgets/contact.dart';
 import '../../../contact/model/contact_model.dart';
 import '../../../contact/view/pages/contact_page.dart';
+
+import '../../../contacts/repository/contacts_repository.dart';
 
 class ContactsPage extends StatefulWidget {
   ContactsPage({Key key}) : super(key: key);
@@ -14,6 +14,8 @@ class ContactsPage extends StatefulWidget {
 }
 
 class _ContactsPageState extends State<ContactsPage> {
+  final ContactsRepository repository = ContactsRepository();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +24,7 @@ class _ContactsPageState extends State<ContactsPage> {
       ),
       body: FutureBuilder<List<ContactModel>>(
         initialData: [],
-        // future: Future.delayed(Duration(seconds: 1)).then((value) => findAll()),
-        future: findAll(),
+        future: repository.findAll(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
