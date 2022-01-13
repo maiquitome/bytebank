@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/widgets/custom_buttom.dart';
+import '../../../core/widgets/custom_button.dart';
 import '../../contacts/contacts/view/pages/contacts_page.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -23,7 +23,7 @@ class DashboardPage extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: CustomButtom(
+              child: CustomButton(
                 icon: Icons.monetization_on,
                 text: 'Transfer',
                 onTap: () {
