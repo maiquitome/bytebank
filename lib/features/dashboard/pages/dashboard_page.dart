@@ -24,6 +24,8 @@ class DashboardPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: CustomButtom(
+                icon: Icons.monetization_on,
+                text: 'Transfer',
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(

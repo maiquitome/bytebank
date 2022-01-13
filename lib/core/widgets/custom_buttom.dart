@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomButtom extends StatelessWidget {
-  const CustomButtom({Key key, @required this.onTap}) : super(key: key);
+  const CustomButtom({
+    Key key,
+    @required this.onTap,
+    @required this.text,
+    @required this.icon,
+  }) : super(key: key);
 
   final void Function() onTap;
+  final String text;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +27,11 @@ class CustomButtom extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Icon(
-                Icons.people,
+                icon,
                 color: Colors.white,
               ),
               Text(
-                'Contacts',
+                text,
                 style: TextStyle(color: Colors.white),
               ),
             ],
