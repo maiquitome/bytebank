@@ -21,21 +21,41 @@ class DashboardPage extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Image.asset('assets/images/bytebank_logo.png'),
             ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: CustomButton(
-                icon: Icons.monetization_on,
-                text: 'Transfer',
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => ContactsPage()),
-                  );
-                },
-              ),
-            ),
+            _buttons(context),
           ],
         ),
+      ),
+    );
+  }
+
+  SingleChildScrollView _buttons(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      padding: EdgeInsets.all(16.0),
+      child: Row(
+        children: [
+          CustomButton(
+            icon: Icons.monetization_on,
+            text: 'Transfer',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ContactsPage()),
+              );
+            },
+          ),
+          const SizedBox(width: 16.0),
+          CustomButton(
+            icon: Icons.view_list,
+            text: 'Transaction Feed',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    builder: (BuildContext context) => ContactsPage()),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
